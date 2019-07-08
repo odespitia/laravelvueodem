@@ -7,12 +7,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="Sistema Compras-Ventas con Laravel y Vue Js- webtraining-it.com">
     <meta name="keyword" content="Sistema Compras-Ventas con Laravel y Vue Js">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>Proyecto</title>
     <!-- Icons -->
     <link href="css/plantilla.css" rel="stylesheet">
 </head>
 
 <body class="app header-fixed sidebar-fixed aside-menu-fixed aside-menu-hidden">
+<div id="app">
 <header class="app-header navbar">
         <button class="navbar-toggler mobile-sidebar-toggler d-lg-none mr-auto" type="button">
           <span class="navbar-toggler-icon"></span>
@@ -53,69 +55,20 @@
 
     <div class="app-body">
 
-       <div class="sidebar">
-            <nav class="sidebar-nav">
-                <ul class="nav">
-                    <li class="nav-item">
-                        <a class="nav-link active" href="#"><i class="icon-speedometer"></i> Dashbord</a>
-                    </li>
-                    <li class="nav-title">
-                        Menú
-                    </li>
-
-                   
-                    <li class="nav-item">
-                        <a class="nav-link" href="#"><i class="fa fa-list"></i> Categorías</a>
-                    </li>
-                    
-                    <li class="nav-item">
-                        <a class="nav-link" href="#"><i class="fa fa-tasks"></i> Productos</a>
-                    </li>
-                      
-            
-                    <li class="nav-item">
-                        <a class="nav-link" href="#"><i class="fa fa-shopping-cart"></i> Compras</a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="#"><i class="fa fa-users"></i> Proveedores</a>
-                    </li>
-                       
-                   
-                    <li class="nav-item">
-                        <a class="nav-link" href="#"><i class="fa fa-suitcase"></i> Ventas</a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="#"><i class="fa fa-users"></i> Clientes</a>
-                    </li>
-                        
-                    
-                    <li class="nav-item">
-                        <a class="nav-link" href="#"><i class="fa fa-user"></i> Usuarios</a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="#"><i class="fa fa-list"></i> Roles</a>
-                    </li>
-                        
-                    
-                </ul>
-            </nav>
-            <button class="sidebar-minimizer brand-minimizer" type="button"></button>
-        </div>
+       @include("plantilla.sidebar")
 
         <!-- Contenido Principal -->
         @yield('contenido')
         <!-- /Fin del contenido principal -->
     </div>   
-
+    </div>
     <footer class="app-footer">
         <span><a href="http://www.webtraining-it.com/">webtraining-it.com</a> &copy; 2019</span>
         <span class="ml-auto">Desarrollado por <a href="http://www.webtraining-it.com/">webtraining-it.com</a></span>
     </footer>
 
     <!-- Bootstrap and necessary plugins -->
+    <script src="js/app.js"></script>
     <script src="js/plantilla.js"></script>
 </body>
 
